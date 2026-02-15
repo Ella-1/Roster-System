@@ -5,7 +5,7 @@ import {
     Flex,
     Text,
     IconButton,
-    Avatar,
+   
     VStack,
 } from "@chakra-ui/react";
 import {
@@ -24,7 +24,7 @@ export default function Navbar() {
             justify="space-between"
             bg="white"
             borderBottom="1px solid"
-            borderColor="gray.200"
+            borderColor="#D9E5F2"
         >
             {/* LEFT SIDE (can hold page title later) */}
             <Box />
