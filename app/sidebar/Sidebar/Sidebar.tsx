@@ -80,12 +80,15 @@ export default function Sidebar() {
                     aria-label="menu"
                     variant="outline"
                     size="md"
+                    border="1px solid"
                     borderRadius="xl"
-                    borderColor="gray.300"
-                    bg="gray.100"
+                    borderColor="#F0F5FA"
+                    bg="#FFFFFF"
                     _hover={{ bg: "gray.200" }}
-                    icon={<HamburgerMenu size="20" color="#555555" />}
-                />
+
+                >
+                    <HamburgerMenu size="20" color="#000000" />
+                </IconButton>
             </Flex>
             {/* Navigation */}
             <VStack align="stretch" gap="2">
