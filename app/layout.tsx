@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Provider } from "./provider";
-import { Flex } from "@chakra-ui/react";
-import Sidebar from "./sidebar/Sidebar/Sidebar"; // adjust path if needed
+import { Flex, Box } from "@chakra-ui/react";
+import Sidebar from "./sidebar/Sidebar/Sidebar";
+import Navbar from "./component/NavBar"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,11 +30,22 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Provider>
-          <Flex minH="100vh">
+          <Flex h="100vh">
+
+            {/* SIDEBAR */}
             <Sidebar />
 
-            <Flex flex="1" p="6">
-              {children}
+            {/* RIGHT PANEL */}
+            <Flex direction="column" flex="1" minW={0}>
+              
+              {/* NAVBAR */}
+              <Navbar />
+
+              {/* CONTENT AREA */}
+              <Box flex="1" p="8" overflow="auto">
+                {children}
+              </Box>
+
             </Flex>
           </Flex>
         </Provider>
