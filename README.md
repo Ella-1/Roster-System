@@ -1,36 +1,204 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗓 Roster System – Frontend Developer Assignment
 
-## Getting Started
+A modern, interactive Roster / Scheduling System built with **Next.js (App Router)**, **TypeScript**, and **Chakra UI**, based on the provided Figma design.
 
-First, run the development server:
+This project demonstrates clean architecture, strong UI implementation skills, and attention to detail in translating design into production-quality frontend code.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Live Demo
+
+> *(Add your deployed link here if available)*
+> Example: [https://roster-system.vercel.app](https://roster-system.vercel.app)
+
+---
+
+## 📌 Overview
+
+This application implements a roster scheduling interface featuring:
+
+* Department-based scheduling columns
+* Time-slot grid positioning
+* Live & Planner view switching
+* Shift details modal
+* Sidebar user filtering
+* Clean, responsive dashboard layout
+
+The focus of this implementation is **accuracy, maintainability, and UI precision**.
+
+---
+
+## 🛠 Tech Stack
+
+* **Next.js (App Router)**
+* **TypeScript**
+* **Chakra UI (v3 / Ark-based components)**
+* **iconsax-reactjs**
+* **react-icons**
+
+No unnecessary third-party libraries were introduced.
+All features are implemented using the required stack only.
+
+---
+
+## ✨ Implemented Features
+
+### ✅ Core Functionality
+
+* 📅 Calendar day view layout
+* ⏱ Time-slot based grid system
+* 🏢 Department columns
+* 🔁 Previous / Current / Next day navigation
+* 🔄 Live & Planner mode switching
+* 📋 Shift details modal (grouped by hour)
+* 🧑‍⚕️ Sidebar roster with filters (All / Available / On Leave)
+* 📥 Dropdown view selector
+* 🧭 Clean header toolbar with segmented controls
+* 🟢 Loading & empty states
+
+---
+
+### 🎨 UI / UX Details
+
+* Pixel-aligned implementation matching Figma
+* Absolute-positioned shift blocks based on time
+* Color-coded shift cards (orange, green, yellow)
+* Modal with proper z-index layering
+* Blurred overlay backdrop
+* Responsive spacing and layout adjustments
+* Consistent 14px typography for filter tabs
+* Clean vertical separators in grouped controls
+
+---
+
+### ⭐ Bonus Enhancements
+
+* Dynamic shift grouping inside modal
+* Live vs Planner dataset switching
+* Time-to-pixel conversion logic abstraction
+* Component separation for scalability
+
+---
+
+## 🧠 Architecture & Design Decisions
+
+This project follows a feature-based architecture.
+
+```
+app/
+  (dashboard)/
+    roster/
+      page.tsx        # Page composition + state management
+
+src/
+  features/
+    roster/
+      types.ts        # TypeScript models
+      mock.ts         # Mock data
+      time.ts         # Time calculation utilities
+      ui/
+        ModeBar.tsx
+        PlannerToolbar.tsx
+        RosterSidebar.tsx
+        PlannerGrid.tsx
+        ShiftListDialog.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Architectural Highlights
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Page-level state management** for view mode, selected date, and modal visibility
+* **Isolated time calculation logic** for accurate shift placement
+* **Presentational components separated from business logic**
+* **Strong typing** for shifts, departments, and roster users
+* **Reusable UI components**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This structure ensures clarity, scalability, and maintainability.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ⏱ Time-Based Positioning Logic
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Shift blocks are positioned using:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Conversion of start/end time into minutes
+* Fixed slot height calculation
+* Absolute positioning inside department columns
 
-## Deploy on Vercel
+This allows:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Accurate vertical placement
+* Flexible time ranges
+* Smooth rendering of overlapping time blocks
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🖥 Getting Started
+
+### 1️⃣ Install dependencies
+
+```
+npm install
+```
+
+### 2️⃣ Run development server
+
+```
+npm run dev
+```
+
+Visit:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🏗 Production Build
+
+```
+npm run build
+npm start
+```
+
+---
+
+## 🌍 Deployment
+
+The project can be deployed using:
+
+* Vercel (recommended)
+* Netlify
+* Any Node-compatible hosting provider
+
+---
+
+## 📦 Code Quality
+
+* Fully typed with TypeScript
+* No unused dependencies
+* Clean component separation
+* No console errors
+* Responsive layout handling
+* Structured commit history
+
+---
+
+## 🎯 What This Project Demonstrates
+
+* Strong understanding of React & Next.js fundamentals
+* Proper state ownership and component composition
+* UI precision and design interpretation
+* Clean, scalable architecture
+* Professional code organization
+
+---
+
+## 👨‍💻 Author
+
+Zoaka Bata Bukar
+Frontend Developer
+
+---
+
+If you would like any adjustments (company branding, personal portfolio links, deployment URL, or GitHub link), update the relevant sections above before submission.
