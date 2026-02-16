@@ -2,6 +2,7 @@
 
 import { Button, Flex, HStack, IconButton, Menu, Text, Box } from "@chakra-ui/react";
 import { ArrowLeft2, ArrowRight2, ArrowDown2 } from "iconsax-reactjs";
+
 import { LuFilter } from "react-icons/lu";
 import { PiUsersThree } from "react-icons/pi";
 import { LuLock } from "react-icons/lu";
@@ -101,7 +102,7 @@ export default function PlannerToolbar({
                             <ArrowDown2 size="18" />
                         </Button>
                     </Menu.Trigger>
-                    <Menu.Positioner placement="bottom-end">
+                    <Menu.Positioner>
                         <Menu.Content
                             borderRadius="xl"
                             minW="200px"
