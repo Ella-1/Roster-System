@@ -20,8 +20,8 @@ function WeekdayDots({ days }: { days?: RosterPerson["weekdays"] }) {
                     align="center"
                     justify="center"
                     borderRadius="full"
-                    bg="green.50"
-                    color="green.700"
+                    bg="#EBFFEF"
+                    color="#37A55C"
                     fontSize="xs"
                 >
                     {map[d]}
@@ -33,10 +33,10 @@ function WeekdayDots({ days }: { days?: RosterPerson["weekdays"] }) {
 
 function PersonCard({ p }: { p: RosterPerson }) {
     return (
-        <Box border="1px solid" borderColor="gray.200" borderRadius="xl" p="4" bg="white">
+        <Box border="1px solid" borderColor="#D9E5F2" borderRadius="xl" p="4" bg="white">
             <Flex justify="space-between" align="center">
                 <HStack gap="3">
-                    <Flex w="40px" h="40px" borderRadius="full" bg="gray.100" align="center" justify="center" fontWeight="700">
+                    <Flex w="40px" h="40px" borderRadius="full" bg="#F0F5FA" align="center" justify="center" fontWeight="700">
                         {p.initials}
                     </Flex>
                     <Box>
@@ -53,7 +53,7 @@ function PersonCard({ p }: { p: RosterPerson }) {
                 </HStack>
 
                 {p.status === "on_leave" && (
-                    <Badge borderRadius="full" bg="red.50" color="red.600" px="2" py="1">
+                    <Badge borderRadius="full" bg="#FEECEC" color="#EF2E2E" px="2" py="1">
                         • On leave
                     </Badge>
                 )}
