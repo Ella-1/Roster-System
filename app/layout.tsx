@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { Provider } from "./provider";
 import { Flex, Box } from "@chakra-ui/react";
 import Sidebar from "./sidebar/Sidebar/Sidebar";
-import Navbar from "./component/NavBar"
+import Navbar from "./component/NavBar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,24 +25,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={manrope.className}>
         <Provider>
           <Flex h="100vh">
-
-           
             <Sidebar />
 
-           
             <Flex direction="column" flex="1" minW={0}>
-              
-              
               <Navbar />
-
-             
               <Box flex="1" p="8" overflow="auto">
                 {children}
               </Box>
-
             </Flex>
           </Flex>
         </Provider>

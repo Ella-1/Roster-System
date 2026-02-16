@@ -68,11 +68,11 @@ export default function PlannerGrid({
   const colCount = columnDefs.length;
 
   return (
-    <Box mt="4" border="1px solid" borderColor="gray.200" borderRadius="2xl" overflow="hidden">
+    <Box mt="4" border="1px solid" borderColor="#E2E4E9" borderRadius="2xl" overflow="hidden">
       
       <Grid templateColumns={`140px repeat(${colCount - 1}, 1fr)`} bg="gray.50" borderBottom="1px solid" borderColor="gray.200">
-        <GridItem bg="#EEF2FF" px="4" py="3" borderRight="1px solid" borderColor="gray.200">
-          <Text fontWeight="700" color="#4F46E5">Days</Text>
+        <GridItem bg="#EBEBFF" px="4" py="3" borderRight="1px solid" borderColor="#E2E4E9">
+          <Text fontWeight="700" color="#5653FC">Days</Text>
         </GridItem>
 
         {columnDefs.slice(1).map((d) => (
