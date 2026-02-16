@@ -16,6 +16,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Excellent Care Clinics",
   description: "Clinic Dashboard",
+  icons: {
+    icon: "logo/logo.svg",
+  },
 };
 
 export default function RootLayout({
