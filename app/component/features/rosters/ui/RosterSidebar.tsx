@@ -102,7 +102,7 @@ export default function RosterSidebar({ people }: { people: RosterPerson[] }) {
                 >
                     <CiSearch size="18" color="#4E5D69" />
                     <Input
-                        variant="unstyled"
+                        // variant="unstyled"
                         placeholder="Search"
                         h="100%"
                     />
