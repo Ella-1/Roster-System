@@ -61,7 +61,7 @@ export default function PlannerGrid({
   const startMin = 11 * 60;
   const endMin = 13 * 60 + 30;
 
-  const slots = [];
+  const slots: number[] = [];
   for (let m = startMin; m <= endMin; m += SLOT_MINUTES) slots.push(m);
 
   const columnDefs = departments; // includes Days as first column title
