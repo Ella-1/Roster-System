@@ -90,7 +90,7 @@ export default function Sidebar() {
                     <HamburgerMenu size="20" color="#000000" />
                 </IconButton>
             </Flex>
-            {/* Navigation */}
+       
             <VStack align="stretch" gap="2">
                 {navigation.map((item) => {
                     const hasChildren = !!item.children;
@@ -102,7 +102,7 @@ export default function Sidebar() {
 
                     return (
                         <Box key={item.label}>
-                            {/* Parent Item */}
+                        
                             <Flex
                                 align="center"
                                 justify="space-between"

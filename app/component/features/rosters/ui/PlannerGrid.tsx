@@ -57,7 +57,7 @@ export default function PlannerGrid({
   shifts: Shift[];
   onShiftClick: (s: Shift) => void;
 }) {
-  // Visible time window (match screenshot: 11:00 to 13:30)
+  
   const startMin = 11 * 60;
   const endMin = 13 * 60 + 30;
 
@@ -69,7 +69,7 @@ export default function PlannerGrid({
 
   return (
     <Box mt="4" border="1px solid" borderColor="gray.200" borderRadius="2xl" overflow="hidden">
-      {/* header row */}
+      
       <Grid templateColumns={`140px repeat(${colCount - 1}, 1fr)`} bg="gray.50" borderBottom="1px solid" borderColor="gray.200">
         <GridItem bg="#EEF2FF" px="4" py="3" borderRight="1px solid" borderColor="gray.200">
           <Text fontWeight="700" color="#4F46E5">Days</Text>
@@ -82,9 +82,9 @@ export default function PlannerGrid({
         ))}
       </Grid>
 
-      {/* body: time rail + columns */}
+    
       <Grid templateColumns={`140px repeat(${colCount - 1}, 1fr)`}>
-        {/* time rail */}
+  
         <GridItem borderRight="1px solid" borderColor="gray.200" bg="white">
           <Box position="relative" pt="0">
             {slots.map((m, i) => {
@@ -100,14 +100,14 @@ export default function PlannerGrid({
           </Box>
         </GridItem>
 
-        {/* dept columns */}
+    
         {columnDefs.slice(1).map((dept) => {
           const deptShifts = shifts.filter((s) => s.deptId === dept.id);
 
           return (
             <GridItem key={dept.id} borderRight="1px solid" borderColor="gray.200" bg="white">
               <Box position="relative" height={`${slots.length * PX_PER_SLOT}px`}>
-                {/* horizontal grid lines */}
+              
                 {slots.map((m, i) => (
                   <Box
                     key={m}
@@ -137,7 +137,6 @@ export default function PlannerGrid({
                     const top = ((start - startMin) / SLOT_MINUTES) * PX_PER_SLOT;
                     const height = ((end - start) / SLOT_MINUTES) * PX_PER_SLOT;
 
-                    // keep inside visible window
                     const topClamped = clamp(top, 6, slots.length * PX_PER_SLOT - 10);
                     const heightClamped = clamp(height, 80, slots.length * PX_PER_SLOT - topClamped - 10);
 
@@ -156,7 +155,6 @@ export default function PlannerGrid({
                   })
                 )}
 
-                {/* “See all” cell example (match screenshot positioning) */}
                 {dept.id === "mgmt" && !loading && (
                   <Box
                     position="absolute"

@@ -2,7 +2,6 @@
 
 import { Button, Flex, HStack, IconButton, Menu, Text, Box } from "@chakra-ui/react";
 import { ArrowLeft2, ArrowRight2, ArrowDown2 } from "iconsax-reactjs";
-import { FiPlus } from "react-icons/fi";
 import { LuFilter } from "react-icons/lu";
 import { PiUsersThree } from "react-icons/pi";
 import { LuLock } from "react-icons/lu";

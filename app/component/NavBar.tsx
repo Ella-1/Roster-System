@@ -26,12 +26,11 @@ export default function Navbar() {
             borderBottom="1px solid"
             borderColor="#D9E5F2"
         >
-            {/* LEFT SIDE (can hold page title later) */}
+          
             <Box />
 
-            {/* RIGHT SIDE */}
             <Flex align="center" gap="6">
-                {/* App Grid */}
+               
                 <IconButton
                     aria-label="apps"
                     variant="ghost"
@@ -45,8 +44,6 @@ export default function Navbar() {
                 </IconButton>
 
 
-
-                {/* Settings */}
                 <IconButton
                     aria-label="settings"
                     variant="ghost"
@@ -58,7 +55,7 @@ export default function Navbar() {
                     <Setting2 size="20" color="#4A5568" />
                 </IconButton>
 
-                {/* Notifications */}
+              
                 <Box position="relative">
                     <IconButton
                         aria-label="notifications"
@@ -82,7 +79,7 @@ export default function Navbar() {
                     />
                 </Box>
 
-                {/* User Section */}
+       
                 <Flex align="center" gap="10" ml="10" >
                     {/* <Avatar.Root size="sm">
                         <Avatar.Fallback name="Paul Cornelius" />

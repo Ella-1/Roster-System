@@ -32,16 +32,16 @@ export default function RootLayout({
         <Provider>
           <Flex h="100vh">
 
-            {/* SIDEBAR */}
+           
             <Sidebar />
 
-            {/* RIGHT PANEL */}
+           
             <Flex direction="column" flex="1" minW={0}>
               
-              {/* NAVBAR */}
+              
               <Navbar />
 
-              {/* CONTENT AREA */}
+             
               <Box flex="1" p="8" overflow="auto">
                 {children}
               </Box>

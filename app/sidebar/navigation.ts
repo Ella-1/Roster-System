@@ -1,12 +1,7 @@
 import {
-  Calendar,
   DocumentText,
-  Setting2,
-  Note,
   TaskSquare,
-  Book,
   Document,
-  Category,
   Stickynote,
   Notepad,
   MenuBoard,

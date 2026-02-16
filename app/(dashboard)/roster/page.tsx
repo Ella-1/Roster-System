@@ -39,7 +39,7 @@ export default function RosterPage() {
 
     return (
         <Box bg="white" minH="100vh" px="6" py="5">
-            {/* Top bar: Live / Planner + description */}
+            
             <ModeBar
                 value={viewMode}
                 onChange={setViewMode}
@@ -47,10 +47,9 @@ export default function RosterPage() {
             />
 
             <Flex mt="4" gap="6" align="flex-start">
-                {/* Left roster panel (3rd screenshot) */}
+               
                 <RosterSidebar people={rosterPeople} />
 
-                {/* Main content */}
                 <Box flex="1" minW="0">
                     <PlannerToolbar
                         date={day}

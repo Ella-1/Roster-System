@@ -4,7 +4,7 @@ export const departments: Department[] = [
   { id: "days", name: "Days" },
   { id: "bk1", name: "Behandelingskamer1" },
   { id: "mgmt", name: "Management" },
-  { id: "leave", name: "Bijzonderheden-Verlof-Cursus-..." },
+  { id: "leave", name: "Bijzonderheden-Verlof-Cursus" },
   { id: "fin", name: "Financien" },
 ];
 
@@ -51,7 +51,7 @@ export const rosterPeople: RosterPerson[] = [
   },
 ];
 
-// Helper to build ISO local strings quickly
+
 const iso = (date: string, time: string) => `${date}T${time}:00`;
 
 export const plannerShifts: Shift[] = [
@@ -112,12 +112,11 @@ export const plannerShifts: Shift[] = [
     title: "Pijnspecialist",
     personName: "Diane Lane",
     start: iso("2025-09-08", "16:00"),
-    end: iso("2025-09-08", "00:00"), // overnight example
+    end: iso("2025-09-08", "00:00"), 
     color: "green",
   },
 ];
 
 export const liveShifts: Shift[] = [
-  // You can change these to represent “live” data; keeping similar for demo
   ...plannerShifts,
 ];

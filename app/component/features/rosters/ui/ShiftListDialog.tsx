@@ -46,7 +46,7 @@ export default function ShiftListDialog({
   dayLabel: string;
   shifts: Shift[];
 }) {
-  // group by hour label like screenshot (11:00, 12:00...)
+ 
   const groups = shifts.reduce<Record<string, Shift[]>>((acc, s) => {
     const k = `${s.start.slice(11, 13)}:00`;
     acc[k] = acc[k] ? [...acc[k], s] : [s];
@@ -54,35 +54,84 @@ export default function ShiftListDialog({
   }, {});
 
   return (
-    <Dialog.Root open={open} onOpenChange={(e) => !e.open && onClose()}>
-      <Dialog.Backdrop />
-      <Dialog.Positioner>
-        <Dialog.Content borderRadius="2xl" p="6" w="520px" maxW="calc(100vw - 24px)">
-          <Flex align="center" justify="space-between">
-            <Text fontSize="2xl" fontWeight="900">{dayLabel}</Text>
-            <Dialog.CloseTrigger asChild>
-              <Button variant="ghost">✕</Button>
-            </Dialog.CloseTrigger>
-          </Flex>
+  <Dialog.Root open={open} onOpenChange={(e) => !e.open && onClose()}>
+    <Dialog.Backdrop
+      bg="blackAlpha.300"
+      backdropFilter="blur(2px)"
+      position="fixed"
+      inset="0"
+      zIndex="1400"
+    />
 
-          <Box mt="4" maxH="520px" overflow="auto" pr="1">
-            <VStack align="stretch" gap="5">
-              {Object.entries(groups).map(([hour, list]) => (
-                <Box key={hour}>
-                  <Text fontWeight="800" mb="3">{hour}</Text>
-                  <VStack align="stretch" gap="3">
-                    {list.map((s) => <Row key={s.id} s={s} />)}
-                  </VStack>
-                </Box>
-              ))}
-            </VStack>
-          </Box>
+    <Dialog.Positioner
+      position="fixed"
+      inset="0"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      zIndex="1500"
+      p="4"
+    >
+      <Dialog.Content
+        w="560px"
+        maxW="calc(100vw - 24px)"
+        maxH="calc(100vh - 120px)"
+        overflow="hidden"
+        bg="white"
+        borderRadius="2xl"
+        boxShadow="0 20px 60px rgba(0,0,0,0.18)"
+        border="1px solid"
+        borderColor="gray.200"
+      >
+        
+        <Flex
+          align="center"
+          justify="space-between"
+          px="6"
+          py="5"
+          borderBottom="1px solid"
+          borderColor="gray.200"
+        >
+          <Text fontSize="2xl" fontWeight="900">
+            {dayLabel}
+          </Text>
 
-          <Button mt="5" w="full" onClick={onClose}>
-            Close
-          </Button>
-        </Dialog.Content>
-      </Dialog.Positioner>
-    </Dialog.Root>
-  );
+          <Dialog.CloseTrigger asChild>
+            <Button
+              variant="ghost"
+              size="sm"
+              borderRadius="full"
+              w="36px"
+              h="36px"
+              minW="36px"
+              fontSize="18px"
+              _hover={{ bg: "gray.100" }}
+            >
+              ✕
+            </Button>
+          </Dialog.CloseTrigger>
+        </Flex>
+
+        
+        <Box px="6" py="5" overflow="auto">
+          <VStack align="stretch" gap="5">
+            {Object.entries(groups).map(([hour, list]) => (
+              <Box key={hour}>
+                <Text fontWeight="800" mb="3" fontSize="lg">
+                  {hour}
+                </Text>
+                <VStack align="stretch" gap="3">
+                  {list.map((s) => (
+                    <Row key={s.id} s={s} />
+                  ))}
+                </VStack>
+              </Box>
+            ))}
+          </VStack>
+        </Box>
+      </Dialog.Content>
+    </Dialog.Positioner>
+  </Dialog.Root>
+);
+
 }
